@@ -19,7 +19,7 @@ public class UsersDAO {
         return session.get(UsersDataSet.class, id);
     }
 
-    public UsersDataSet getUser(String login) {
+    public UsersDataSet getUserByLogin(String login) {
         EntityManager entityManager = session.getSessionFactory().createEntityManager();
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
         CriteriaQuery<UsersDataSet> criteria = builder.createQuery(UsersDataSet.class);

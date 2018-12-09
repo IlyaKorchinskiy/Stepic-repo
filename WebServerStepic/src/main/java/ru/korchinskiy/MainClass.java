@@ -6,18 +6,20 @@ import org.eclipse.jetty.server.handler.HandlerList;
 import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
+import ru.korchinskiy.chat.WebSocketChatServlet;
 import ru.korchinskiy.dbService.DBService;
 import ru.korchinskiy.servlets.SignInServlet;
 import ru.korchinskiy.servlets.SignUpServlet;
 
 public class MainClass {
     public static void main(String[] args) {
-        DBService dbService = new DBService();
+//        DBService dbService = new DBService();
 //        dbService.printConnectInfo();
 
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
-        context.addServlet(new ServletHolder(new SignUpServlet(dbService)), "/signup");
-        context.addServlet(new ServletHolder(new SignInServlet(dbService)), "/signin");
+//        context.addServlet(new ServletHolder(new SignUpServlet(dbService)), "/signup");
+//        context.addServlet(new ServletHolder(new SignInServlet(dbService)), "/signin");
+        context.addServlet(new ServletHolder(new WebSocketChatServlet()), "/chat");
 
         ResourceHandler resourceHandler = new ResourceHandler();
         resourceHandler.setResourceBase("public_html");

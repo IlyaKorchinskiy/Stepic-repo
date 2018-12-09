@@ -36,6 +36,7 @@ public class SignInServlet extends HttpServlet {
 
         resp.setContentType("text/html;charset=utf-8");
         resp.getWriter().println("Authorized: " + login);
+        resp.sendRedirect("/chatpage.html");
         resp.setStatus(HttpServletResponse.SC_OK);
     }
 }

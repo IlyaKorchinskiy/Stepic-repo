@@ -27,7 +27,7 @@ public class DBService {
     public UsersDataSet getUserByLogin(String login) {
         Session session = sessionFactory.openSession();
         UsersDAO dao = new UsersDAO(session);
-        UsersDataSet dataSet = dao.getUser(login);
+        UsersDataSet dataSet = dao.getUserByLogin(login);
         session.close();
         return dataSet;
     }

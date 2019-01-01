@@ -7,9 +7,6 @@ import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import ru.korchinskiy.chat.WebSocketChatServlet;
-import ru.korchinskiy.dbService.DBService;
-import ru.korchinskiy.servlets.SignInServlet;
-import ru.korchinskiy.servlets.SignUpServlet;
 
 public class MainClass {
     public static void main(String[] args) {
